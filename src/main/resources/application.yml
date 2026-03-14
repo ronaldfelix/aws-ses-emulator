@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: fakeses
+
+server:
+  port: ${SES_EMULATOR_PORT:8045}
+
+ses:
+  emulator:
+    gmail:
+      user: ${GMAIL_USER}
+      app-password: ${GMAIL_PASSWORD}
+
+logging:
+  level:
+    root: INFO
+    org.aref.fakeses: DEBUG
+

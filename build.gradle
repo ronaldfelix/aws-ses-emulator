@@ -1,0 +1,41 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.0.3'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'org.aref'
+version = '0.0.1-SNAPSHOT'
+description = 'fakeses — Emulador local de AWS SES con reenvío vía Gmail SMTP'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Web para exponer el endpoint HTTP que imita AWS SES Query API
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// JavaMail API (spec)
+	implementation 'jakarta.mail:jakarta.mail-api:2.1.3'
+
+	// JavaMail implementación (Eclipse Angus)
+	implementation 'org.eclipse.angus:jakarta.mail:2.0.3'
+
+	// Lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
