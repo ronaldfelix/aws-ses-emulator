@@ -5,7 +5,7 @@
 
 ---
 
-## ⚡ TL;DR — ¿Qué necesito cambiar en mi aplicación cliente?
+## ⚡ ¿Qué necesito cambiar en mi aplicación cliente?
 
 **Solo agregar estas líneas en el perfil local de tu app. Cero cambios de código Java.**
 
@@ -157,7 +157,7 @@ logging:
 
 ---
 
-## ⚙️ Cambios en tu aplicación cliente — Solo YAML
+## ⚙️ Notas finales
 
 > **¿Como es que funciona?**
 >
@@ -235,7 +235,7 @@ curl -s -X POST http://localhost:8045/ \
 
 ### El correo llega pero el `From` muestra la cuenta Gmail
 - Gmail obliga que el `From` sea la cuenta autenticada. Esto es correcto y esperado en local.
-- El emulador logea un `⚠️ WARN` cuando el `From` original difiere del Gmail relay.
+- El emulador logea un `WARN` cuando el `From` original difiere del Gmail relay.
 - Se configura `Reply-To` con el from original para que el destinatario pueda responder al remitente real.
 - En producción (AWS SES real), el `From` sí será el configurado en tu app.
 
@@ -259,4 +259,7 @@ curl -s -X POST http://localhost:8045/ \
 - [ ] Verificar la bandeja de entrada del destinatario
 
 ---
-> Saludos :)
+> - Saludos :)
+
+
+`AREF 2026 arefqf@gmail.com`
